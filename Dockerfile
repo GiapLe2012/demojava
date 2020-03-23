@@ -1,5 +1,4 @@
 FROM openjdk:8u131-jre-alpine
-ENV HW_HOME=/opt/hello-world
-ADD HelloWorld.class $HW_HOME/
-WORKDIR $HW_HOME
+COPY HelloWorld.java /usr/src/myapp
+WORKDIR /usr/src/myapp
 ENTRYPOINT ["java", "HelloWorld"]
