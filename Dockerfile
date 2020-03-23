@@ -1,4 +1,5 @@
-FROM openjdk:8u131-jre-alpine
-COPY HelloWorld.java /usr/src/myapp
+FROM openjdk:7
+COPY . /usr/src/myapp
 WORKDIR /usr/src/myapp
-ENTRYPOINT ["java", "HelloWorld"]
+RUN javac Main.java
+CMD ["java", "Main"]
